@@ -46,3 +46,5 @@ variable "monitoring_memory" {
   type        = number
   default     = 6
 }
+
+# Проверка CI
