@@ -90,6 +90,12 @@ resource "yandex_compute_instance" "node" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${var.ssh_public_key}"
+    ssh-keys = "ubuntu:${trimspace(var.ssh_public_key)}"
+  }
+
+  # Семейство образов обновляется со временем. Без этого CI при очередном apply
+  # пересоздал бы уже работающие ВМ (и кластер на них)
+  lifecycle {
+    ignore_changes = [boot_disk[0].initialize_params[0].image_id]
   }
 }

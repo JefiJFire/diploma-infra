@@ -61,10 +61,11 @@ jobs:
         run: terraform validate
 
       - name: Plan
-        run: terraform plan -no-color -input=false -out=tfplan | tee plan.txt
+        shell: bash   # включает pipefail: при ошибке plan шаг падает, а не скрывается за tee
+        run: terraform plan -no-color -input=false -out=tfplan 2>&1 | tee plan.txt
 
       - name: Комментарий с планом в PR
-        if: github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
