@@ -1,0 +1,11 @@
+---
+# Зеркала реестров для containerd. По умолчанию образы тянутся напрямую.
+# Если загрузка образов с docker.io упирается в лимиты или блокировки,
+# раскомментируйте и укажите доступное зеркало:
+#
+# containerd_registries_mirrors:
+#   - prefix: docker.io
+#     mirrors:
+#       - host: https://<адрес-зеркала>
+#         capabilities: ["pull", "resolve"]
+#         skip_verify: false

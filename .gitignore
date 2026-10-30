@@ -1,0 +1,15 @@
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+backend.hcl
+!backend.hcl.example
+plan.txt
+crash.log
+*.pem
+*-key.json
+ansible/inventory/hosts.yaml
+ansible/.venv/
+ansible/kubespray/
+ansible/inventory/artifacts/

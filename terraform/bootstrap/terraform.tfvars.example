@@ -1,0 +1,3 @@
+cloud_id          = "b1g..."
+folder_id         = "b1g..."
+state_bucket_name = "diploma-tfstate-CHANGE-ME"

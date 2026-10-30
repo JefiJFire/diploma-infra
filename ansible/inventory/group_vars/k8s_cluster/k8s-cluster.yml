@@ -1,0 +1,13 @@
+---
+# Параметры кластера Kubespray (переопределяют значения по умолчанию)
+
+kube_network_plugin: calico
+container_manager: containerd
+
+# Сохранить admin.conf на машине, с которой запускается Ansible:
+# inventory/artifacts/admin.conf, адрес сервера = публичный IP мастера
+kubeconfig_localhost: true
+kubeconfig_localhost_ansible_host: true
+
+# Экономия ресурсов узлов (2 vCPU с долей 20%)
+enable_nodelocaldns: false
